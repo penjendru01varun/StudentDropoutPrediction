@@ -428,18 +428,24 @@ def preprocess_data(df):
         
     processed_df = processed_df.fillna(processed_df.median(numeric_only=True))
     
-    # Label encode categorical object columns if any
+    # Label encode categorical columns — handle both 'object' and PyArrow string dtypes
     le = LabelEncoder()
-    categorical_cols = processed_df.select_dtypes(include=['object']).columns.tolist()
-    categorical_cols = [col for col in categorical_cols if col != 'Target']
+    categorical_cols = [
+        col for col in processed_df.columns
+        if col != 'Target' and (
+            processed_df[col].dtype == 'object' or
+            hasattr(processed_df[col], 'dtype') and 'string' in str(processed_df[col].dtype).lower()
+        )
+    ]
     for col in categorical_cols:
-        processed_df[col] = le.fit_transform(processed_df[col])
+        processed_df[col] = le.fit_transform(processed_df[col].astype(str))
         
-    # Map target variable
+    # Map target variable — robust against PyArrow string dtype (Python 3.14 / newer pandas)
     if 'Target' in processed_df.columns:
-        if processed_df['Target'].dtype == 'object':
-            processed_df['Target'] = processed_df['Target'].map(TARGET_MAPPING)
-        processed_df['Target'] = processed_df['Target'].fillna(0).astype(int)
+        if not pd.api.types.is_integer_dtype(processed_df['Target']):
+            # Convert to plain Python str first to strip any PyArrow backing, then map
+            processed_df['Target'] = processed_df['Target'].astype(str).map(TARGET_MAPPING)
+        processed_df['Target'] = pd.to_numeric(processed_df['Target'], errors='coerce').fillna(0).astype(int)
         
     for col in processed_df.columns:
         processed_df[col] = pd.to_numeric(processed_df[col], errors='coerce')

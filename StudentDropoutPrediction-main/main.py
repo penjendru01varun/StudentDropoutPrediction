@@ -16,7 +16,6 @@ from fpdf import FPDF
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-<<<<<<< HEAD
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
@@ -32,23 +31,13 @@ from sklearn.metrics import (
     accuracy_score, classification_report, confusion_matrix, 
     roc_auc_score, roc_curve, precision_recall_curve, average_precision_score
 )
-=======
-from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score, roc_curve
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
 from imblearn.over_sampling import SMOTE
 import shap
 import lime
 import lime.lime_tabular
 
-<<<<<<< HEAD
 from research_data import RESEARCH_PAPERS, SYSTEMATIC_REVIEW_DATA
 
-=======
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
 warnings.filterwarnings('ignore')
 
 # ============= CONFIGURATION =============
@@ -119,16 +108,11 @@ st.markdown("""
     }
     
     .glass-card:hover {
-<<<<<<< HEAD
         transform: translateY(-3px);
-=======
-        transform: translateY(-4px) scale(1.01);
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         border-color: rgba(118, 75, 162, 0.4);
         box-shadow: 0 12px 40px 0 rgba(118, 75, 162, 0.25);
     }
 
-<<<<<<< HEAD
     /* Paper Badge styling */
     .paper-badge {
         font-size: 0.75rem;
@@ -154,8 +138,6 @@ st.markdown("""
         margin-bottom: 4px;
     }
 
-=======
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     /* KPI metric container */
     .kpi-container {
         display: flex;
@@ -179,34 +161,21 @@ st.markdown("""
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 800;
-<<<<<<< HEAD
         font-size: 2.6rem;
-=======
-        font-size: 2.8rem;
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         margin-bottom: 5px;
         text-shadow: 0 0 30px rgba(240, 147, 251, 0.15);
     }
     
     .subtitle {
         color: rgba(255, 255, 255, 0.7);
-<<<<<<< HEAD
         font-size: 1.1rem;
         margin-bottom: 25px;
-=======
-        font-size: 1.15rem;
-        margin-bottom: 30px;
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         font-weight: 300;
     }
 
     .section-header {
         font-weight: 700;
-<<<<<<< HEAD
         font-size: 1.4rem;
-=======
-        font-size: 1.5rem;
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         color: #ffffff;
         border-left: 5px solid #764ba2;
         padding-left: 12px;
@@ -214,18 +183,6 @@ st.markdown("""
         margin-bottom: 20px;
     }
 
-<<<<<<< HEAD
-=======
-    /* Table custom styles */
-    .dataframe {
-        border-collapse: collapse;
-        width: 100%;
-        border-radius: 12px;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.02) !important;
-    }
-
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     /* Risk badges styling and animations */
     .risk-badge {
         font-weight: 600;
@@ -278,11 +235,7 @@ st.markdown("""
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
         color: white !important;
         border: none !important;
-<<<<<<< HEAD
         padding: 10px 24px !important;
-=======
-        padding: 12px 28px !important;
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         border-radius: 12px !important;
         font-weight: 600 !important;
         box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4) !important;
@@ -293,25 +246,9 @@ st.markdown("""
     div.stButton > button:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6) !important;
-<<<<<<< HEAD
         background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
     }
 
-=======
-        border: none !important;
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
-    }
-
-    div.stButton > button:active {
-        transform: translateY(1px) !important;
-    }
-
-    /* Input widgets customization */
-    .stSlider [data-baseweb="slider"] {
-        background-color: transparent !important;
-    }
-    
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
         width: 8px;
@@ -324,12 +261,6 @@ st.markdown("""
         background: rgba(255, 255, 255, 0.1);
         border-radius: 4px;
     }
-<<<<<<< HEAD
-=======
-    ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.25);
-    }
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
 </style>
 """, unsafe_allow_html=True)
 
@@ -438,7 +369,6 @@ def load_data(uploaded_file=None):
     return pd.DataFrame()
 
 
-<<<<<<< HEAD
 # ============= COMPREHENSIVE FEATURE ENGINEERING (PAPERS 1, 3, 4, 6, 8, 23, 24) =============
 @st.cache_data
 def engineer_features(df):
@@ -451,12 +381,6 @@ def engineer_features(df):
     - Financial Vulnerability Index (Papers 11, 12, 19: Hoyos & Daza, ADPoCS)
     - Curricular Efficiency Metric (Paper 3: Zhao, 2025)
     """
-=======
-# ============= FEATURE ENGINEERING =============
-@st.cache_data
-def engineer_features(df):
-    """Perform Feature Engineering for Early Warning System"""
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     df_feat = df.copy()
     
     # 1. Credit Completion Rate 1st Sem = approved / enrolled
@@ -477,11 +401,7 @@ def engineer_features(df):
     else:
         df_feat['Credit_Completion_Rate_2nd_Sem'] = 1.0
         
-<<<<<<< HEAD
     # 3. Grade Drop = 1st_sem_grade - 2nd_sem_grade (Papers 6, 23)
-=======
-    # 3. Grade Drop = 1st_sem_grade - 2nd_sem_grade
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     if 'Curricular units 1st sem (grade)' in df_feat.columns and 'Curricular units 2nd sem (grade)' in df_feat.columns:
         df_feat['Grade_Drop'] = (
             df_feat['Curricular units 1st sem (grade)'] - 
@@ -502,11 +422,7 @@ def engineer_features(df):
     else:
         df_feat['Engagement_Score'] = 1.0
         
-<<<<<<< HEAD
     # 5. Academic Stress Index = enrolled - approved (Papers 1, 8)
-=======
-    # 5. Academic Stress Index = enrolled - approved
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     if ('Curricular units 1st sem (enrolled)' in df_feat.columns and 
         'Curricular units 2nd sem (enrolled)' in df_feat.columns and 
         'Curricular units 1st sem (approved)' in df_feat.columns and 
@@ -518,17 +434,12 @@ def engineer_features(df):
     else:
         df_feat['Academic_Stress_Index'] = 0.0
         
-<<<<<<< HEAD
     # 6. Financial Risk = Debtor + (1 - Tuition fees up to date) + (1 - Scholarship holder) (Papers 11, 19)
-=======
-    # 6. Financial Risk = Debtor + (1 - Tuition fees up to date) + (1 - Scholarship holder)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     debtor = df_feat['Debtor'] if 'Debtor' in df_feat.columns else 0.0
     tuition = df_feat['Tuition fees up to date'] if 'Tuition fees up to date' in df_feat.columns else 1.0
     scholarship = df_feat['Scholarship holder'] if 'Scholarship holder' in df_feat.columns else 0.0
     df_feat['Financial_Risk'] = (debtor + (1.0 - tuition) + (1.0 - scholarship)).fillna(0.0)
     
-<<<<<<< HEAD
     # 7. Activity Span (Paper 4: Romdhoni et al., 2026 - dominant predictor at 41.3%)
     if ('Curricular units 1st sem (evaluations)' in df_feat.columns and 
         'Curricular units 2nd sem (evaluations)' in df_feat.columns and
@@ -555,8 +466,6 @@ def engineer_features(df):
     else:
         df_feat['Academic_Trajectory'] = 0.0
 
-=======
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     return df_feat
 
 
@@ -568,11 +477,7 @@ def preprocess_data(df):
         
     processed_df = processed_df.fillna(processed_df.median(numeric_only=True))
     
-<<<<<<< HEAD
     # Label encode categorical columns
-=======
-    # Label encode categorical columns — handle both 'object' and PyArrow string dtypes
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     le = LabelEncoder()
     categorical_cols = [
         col for col in processed_df.columns
@@ -584,16 +489,9 @@ def preprocess_data(df):
     for col in categorical_cols:
         processed_df[col] = le.fit_transform(processed_df[col].astype(str))
         
-<<<<<<< HEAD
     # Map target variable
     if 'Target' in processed_df.columns:
         if not pd.api.types.is_integer_dtype(processed_df['Target']):
-=======
-    # Map target variable — robust against PyArrow string dtype (Python 3.14 / newer pandas)
-    if 'Target' in processed_df.columns:
-        if not pd.api.types.is_integer_dtype(processed_df['Target']):
-            # Convert to plain Python str first to strip any PyArrow backing, then map
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             processed_df['Target'] = processed_df['Target'].astype(str).map(TARGET_MAPPING)
         processed_df['Target'] = pd.to_numeric(processed_df['Target'], errors='coerce').fillna(0).astype(int)
         
@@ -603,11 +501,7 @@ def preprocess_data(df):
     processed_df.dropna(inplace=True)
     
     # XGBoost/LightGBM clean brackets from columns
-<<<<<<< HEAD
     cleaned_cols = [c.replace('[', '').replace(']', '').replace('<', '').replace(' ', '_') for c in processed_df.columns]
-=======
-    cleaned_cols = [c.replace('[', '').replace(']', '').replace('<', '') for c in processed_df.columns]
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     processed_df.columns = cleaned_cols
     
     X = processed_df.drop('Target', axis=1)
@@ -630,22 +524,13 @@ def preprocess_inference_data(df, training_columns):
     le = LabelEncoder()
     categorical_cols = processed_df.select_dtypes(include=['object']).columns.tolist()
     for col in categorical_cols:
-<<<<<<< HEAD
         processed_df[col] = le.fit_transform(processed_df[col].astype(str))
-=======
-        processed_df[col] = le.fit_transform(processed_df[col])
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
     for col in processed_df.columns:
         processed_df[col] = pd.to_numeric(processed_df[col], errors='coerce')
         
-<<<<<<< HEAD
     # Clean brackets and match column naming format
     cleaned_cols = [c.replace('[', '').replace(']', '').replace('<', '').replace(' ', '_') for c in processed_df.columns]
-=======
-    # Clean brackets from columns to match model
-    cleaned_cols = [c.replace('[', '').replace(']', '').replace('<', '') for c in processed_df.columns]
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     processed_df.columns = cleaned_cols
     
     # Align columns with training features
@@ -657,7 +542,6 @@ def preprocess_inference_data(df, training_columns):
     return processed_df
 
 
-<<<<<<< HEAD
 # ============= 10-MODEL MACHINE LEARNING ENGINE (PAPERS 1, 3, 4, 7, 8, 9, 13, 14, 16, 20, 30) =============
 @st.cache_resource
 def train_and_compare_models(df_engineered):
@@ -665,42 +549,24 @@ def train_and_compare_models(df_engineered):
     Train and compare 10 Machine Learning Classifiers representing the state of the art
     across the 30 literature papers, utilizing SMOTE for class imbalance mitigation.
     """
-=======
-# ============= MODEL TRAINING =============
-@st.cache_resource
-def train_and_compare_models(df_engineered):
-    """Train models with SMOTE and calculate evaluation metrics"""
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     X, y, processed_df = preprocess_data(df_engineered)
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
     
-<<<<<<< HEAD
     # SMOTE to handle class imbalance (Paper 2: Lee & Chung 2019; Paper 20: Tecnologico de Monterrey)
     smote = SMOTE(random_state=42)
     X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
     
     # Standardize for distance-based and linear models
-=======
-    # SMOTE to handle imbalance
-    smote = SMOTE(random_state=42)
-    X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
-    
-    # Standardize for Logistic Regression
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     scaler = StandardScaler()
     X_train_res_scaled = scaler.fit_transform(X_train_res)
     X_test_scaled = scaler.transform(X_test)
     
-<<<<<<< HEAD
     # 10 ML Classifiers reflecting literature architectures
-=======
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     models = {
         'Random Forest': RandomForestClassifier(n_estimators=150, class_weight='balanced', random_state=42, n_jobs=-1),
         'XGBoost': XGBClassifier(use_label_encoder=False, eval_metric='mlogloss', random_state=42, n_jobs=-1),
         'LightGBM': LGBMClassifier(random_state=42, n_jobs=-1, verbose=-1),
-<<<<<<< HEAD
         'Logistic Regression': LogisticRegression(max_iter=1000, class_weight='balanced', random_state=42),
         'Support Vector Machine': SVC(probability=True, class_weight='balanced', random_state=42),
         'k-Nearest Neighbors (KNN)': KNeighborsClassifier(n_neighbors=5, n_jobs=-1),
@@ -708,23 +574,15 @@ def train_and_compare_models(df_engineered):
         'AdaBoost': AdaBoostClassifier(n_estimators=100, random_state=42),
         'Gradient Boosting': GradientBoostingClassifier(n_estimators=120, random_state=42),
         'Neural Network (MLP)': MLPClassifier(hidden_layer_sizes=(64, 32), max_iter=300, random_state=42)
-=======
-        'Logistic Regression': LogisticRegression(max_iter=1000, class_weight='balanced', random_state=42)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     }
     
     results = {}
     fitted_models = {}
     
-<<<<<<< HEAD
     scaled_required_models = ['Logistic Regression', 'Support Vector Machine', 'k-Nearest Neighbors (KNN)', 'Neural Network (MLP)']
     
     for name, model in models.items():
         if name in scaled_required_models:
-=======
-    for name, model in models.items():
-        if name in ['Logistic Regression']:
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             model.fit(X_train_res_scaled, y_train_res)
             y_pred = model.predict(X_test_scaled)
             y_prob = model.predict_proba(X_test_scaled)
@@ -743,7 +601,6 @@ def train_and_compare_models(df_engineered):
         except Exception:
             auc = 0.0
             
-<<<<<<< HEAD
         # Multi-class average precision for PR curves (Paper 2)
         try:
             y_test_bin = pd.get_dummies(y_test).values
@@ -751,19 +608,13 @@ def train_and_compare_models(df_engineered):
         except Exception:
             pr_auc = 0.0
             
-=======
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         results[name] = {
             'Accuracy': acc,
             'Precision': report['macro avg']['precision'],
             'Recall': report['macro avg']['recall'],
             'F1-Score': report['macro avg']['f1-score'],
-<<<<<<< HEAD
             'ROC_AUC': auc,
             'PR_AUC': pr_auc
-=======
-            'ROC_AUC': auc
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         }
         
     comparison_df = pd.DataFrame(results).T
@@ -771,7 +622,6 @@ def train_and_compare_models(df_engineered):
     return fitted_models, comparison_df, X_train, X_test, y_train, y_test, X_train_res, y_train_res, scaler
 
 
-<<<<<<< HEAD
 # ============= STUDENT PROFILING & CLUSTERING (PAPER 22: GALLEGO ET AL., 2021) =============
 @st.cache_data
 def perform_student_clustering(X_df, n_clusters=3):
@@ -808,9 +658,6 @@ def perform_student_clustering(X_df, n_clusters=3):
 
 
 # ============= EXPLAINABILITY & ADPoCS COUNSELING ENGINE =============
-=======
-# ============= EXPLAINABILITY UTILITIES =============
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
 def get_class_shap_values(shap_values, class_idx):
     """Retrieve SHAP values for a specific class depending on format"""
     if isinstance(shap_values, list):
@@ -841,38 +688,23 @@ def get_shap_explainer(_model, _X_train, model_name, _scaler=None):
         if model_name == 'Logistic Regression':
             scaled_bg = _scaler.transform(_X_train.sample(n=min(100, len(_X_train)), random_state=42))
             explainer = shap.LinearExplainer(_model, scaled_bg)
-<<<<<<< HEAD
         elif model_name in ['Random Forest', 'XGBoost', 'LightGBM', 'Gradient Boosting']:
             explainer = shap.TreeExplainer(_model)
         else:
             explainer = shap.Explainer(_model.predict_proba, _X_train.sample(n=min(60, len(_X_train)), random_state=42))
         return explainer
     except Exception as e:
-=======
-        elif model_name in ['Random Forest', 'XGBoost', 'LightGBM']:
-            explainer = shap.TreeExplainer(_model)
-        else:
-            explainer = shap.Explainer(_model, _X_train.sample(n=100, random_state=42))
-        return explainer
-    except Exception as e:
-        st.warning(f"Could not create SHAP explainer: {e}")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         return None
 
 
 def generate_natural_language_explanation(row, shap_values_dict):
     """Generate professional, educator-friendly explanation of student risk"""
-<<<<<<< HEAD
     sorted_features = sorted(shap_values_dict.items(), key=lambda x: abs(x[1]), reverse=True)
-=======
-    sorted_features = sorted(shap_values_dict.items(), key=lambda x: x[1], reverse=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     
     bullet_points = []
     count = 1
     
     for feat, shap_val in sorted_features:
-<<<<<<< HEAD
         val = row.get(feat, 0.0)
         
         if 'approved' in feat.lower() or 'credit_completion' in feat.lower():
@@ -896,51 +728,17 @@ def generate_natural_language_explanation(row, shap_values_dict):
         else:
             clean_name = feat.replace('_', ' ').title()
             bullet_points.append(f"🔍 **{clean_name}**: Measured at `{val:.2f}`, this indicator significantly influenced the model's risk calculation.")
-=======
-        if shap_val <= 0.005:
-            continue
-        val = row.get(feat, 0.0)
-        
-        if 'Curricular units 1st sem (approved)' in feat or 'Credit_Completion_Rate_1st_Sem' in feat:
-            bullet_points.append(f"🎓 **Academic Performance (1st Sem)**: Low credit completion. The student approved only {row.get('Curricular units 1st sem (approved)', 0):.0f} of their enrolled units. Historically, a failure to complete credits in the first semester is the single strongest indicator of long-term disengagement.")
-        elif 'Curricular units 2nd sem (approved)' in feat or 'Credit_Completion_Rate_2nd_Sem' in feat:
-            bullet_points.append(f"📚 **Academic Progress (2nd Sem)**: Only {row.get('Curricular units 2nd sem (approved)', 0):.0f} units completed in the second semester. Difficulty in program progression indicates a high risk of academic overload.")
-        elif 'Tuition fees up to date' in feat and val == 0:
-            bullet_points.append(f"💳 **Tuition Overdue**: Tuition fees are not up to date, adding substantial financial stress and placing institutional registration holds at risk.")
-        elif 'Debtor' in feat and val == 1:
-            bullet_points.append(f"⚠️ **Institutional Debt**: Outstanding debt increases the probability of dropout due to sudden financial hardship and hold policies.")
-        elif 'Scholarship holder' in feat and val == 0:
-            bullet_points.append(f"💸 **No Financial Scholarship**: Lack of a scholarship/bursary increases reliance on external employment or loans, leading to exhaustion and stress.")
-        elif 'Academic_Stress_Index' in feat and val > 2.0:
-            bullet_points.append(f"🧠 **High Academic Stress**: An stress index of {val:.1f} credits represents an overloaded class schedule relative to credit success, leading to fatigue.")
-        elif 'Financial_Risk' in feat and val > 1.0:
-            bullet_points.append(f"💰 **Financial Risk Score**: The financial vulnerability index is {val:.1f}/3.0. Outstanding debt combined with lack of funding makes continued enrollment highly unstable.")
-        elif 'Grade_Drop' in feat and val > 1.5:
-            bullet_points.append(f"📉 **Declining Grades**: Average grade dropped by {val:.1f} points between semesters, showing sudden academic difficulty or disengagement.")
-        elif 'Curricular units 1st sem (grade)' in feat and val < 10.0:
-            bullet_points.append(f"✏️ **Low 1st Sem Grade**: Average grade is {val:.1f}/20, indicating immediate academic struggles in foundational courses.")
-        elif 'Age at enrollment' in feat and val > 25:
-            bullet_points.append(f"👤 **Non-Traditional Age**: Enrolling at an older age ({val:.0f} yrs) correlates with external responsibilities (family, work) that complicate scheduling.")
-        else:
-            feat_name = feat.replace('_', ' ').title()
-            bullet_points.append(f"🔍 **{feat_name}**: Feature value ({val:.2f}) had a positive correlation with dropout risk in this model run.")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             
         count += 1
         if count > 4:
             break
             
     if not bullet_points:
-<<<<<<< HEAD
         return "No major risk drivers identified. The student's academic, financial, and engagement metrics are supportive."
-=======
-        return "No major risk drivers identified. The student's academic and financial indicators are generally supportive and low-risk."
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
     return "\n\n".join(bullet_points)
 
 
-<<<<<<< HEAD
 def get_adpocs_counseling_plan(row, risk_proba):
     """
     AI-Based Dropout Prediction and Counselling System (ADPoCS) - Paper 19 (ADPoCS 2024):
@@ -972,24 +770,10 @@ def get_adpocs_counseling_plan(row, risk_proba):
     # Academic Recommendations
     first_sem_app = row.get('Curricular_units_1st_sem_(approved)', row.get('Curricular units 1st sem (approved)', 6))
     first_sem_grade = row.get('Curricular_units_1st_sem_(grade)', row.get('Curricular units 1st sem (grade)', 12.0))
-=======
-def get_actionable_recommendations(row, risk_proba):
-    """Generate personalized recommendation steps based on student features"""
-    recs = []
-    
-    if risk_proba < 0.40:
-        recs.append("✅ **Regular Monitoring**: No immediate intervention needed. Keep the student engaged with routine check-ins and standard academic advising.")
-        return recs
-        
-    # Academic interventions
-    first_sem_app = row.get('Curricular units 1st sem (approved)', 6)
-    first_sem_grade = row.get('Curricular units 1st sem (grade)', 12.0)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     grade_drop = row.get('Grade_Drop', 0.0)
     stress_idx = row.get('Academic_Stress_Index', 0.0)
     
     if first_sem_app <= 2 or first_sem_grade < 10.0:
-<<<<<<< HEAD
         plan["academic"].append("📚 **1-on-1 Peer Tutoring & Coaching**: Enroll in mandatory foundational peer tutoring (Paper 3: demonstrated 86% GPA recovery).")
     if grade_drop > 2.0:
         plan["academic"].append("📈 **Academic Trajectory Review**: Conduct urgent syllabus diagnostics to address sudden semester-to-semester grade degradation.")
@@ -1022,40 +806,6 @@ def get_actionable_recommendations(row, risk_proba):
 # ============= PDF DOSSIER EXPORT =============
 def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level, adpocs_plan, why_at_risk):
     """Generate high-quality multi-page PDF report for student intervention"""
-=======
-        recs.append("📚 **Academic Coaching**: Schedule mandatory meetings with an academic advisor. Recommend enrolling in foundational tutoring classes and peer study groups.")
-    if grade_drop > 2.0:
-        recs.append("📈 **Performance Review**: A significant grade decline is observed. Contact the student to identify sudden personal, health, or adjustment issues.")
-    if stress_idx > 4.0:
-        recs.append("🧠 **Credit Load Adjustment**: The academic stress index is high. Consider counseling the student to adjust their credit load or withdraw from non-essential electives.")
-        
-    # Financial interventions
-    debtor = row.get('Debtor', 0)
-    tuition = row.get('Tuition fees up to date', 1)
-    scholarship = row.get('Scholarship holder', 0)
-    fin_risk = row.get('Financial_Risk', 0.0)
-    
-    if debtor == 1 or tuition == 0:
-        recs.append("💰 **Financial Counseling**: Connect the student with the Financial Aid Office immediately. Explore tuition payment restructuring or emergency student bursaries.")
-    elif (scholarship == 0 and risk_proba > 0.60) or fin_risk > 1.5:
-        recs.append("💸 **Scholarship Support**: Help the student search for local grants, work-study options, or need-based scholarships.")
-        
-    # Stress & Demographic interventions
-    displaced = row.get('Displaced', 0)
-    
-    if displaced == 1:
-        recs.append("🏠 **Social Integration Support**: Connect the student with campus groups, commuter student clubs, or residential mentorship panels.")
-        
-    if not recs:
-        recs.append("🔍 **Comprehensive Advising Interview**: Set up a face-to-face academic review to identify non-quantified hurdles.")
-        
-    return recs
-
-
-# ============= EXPORT FUNCTIONS =============
-def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level, recommendations, why_at_risk):
-    """Generate high-quality PDF report for student intervention"""
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     pdf = FPDF()
     pdf.add_page()
     
@@ -1063,7 +813,6 @@ def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level,
         if not isinstance(t, str):
             t = str(t)
         cleaned = t.replace('**', '').replace('###', '').replace('##', '').replace('#', '')
-<<<<<<< HEAD
         for char in ['🎓', '📚', '💳', '⚠️', '💸', '🧠', '📉', '✏️', '🔍', '✅', '📈', '💰', '🏠', '🔴', '🟡', '🟢', '🟣', '⚡', '🧘', '⏰', '🚨']:
             cleaned = cleaned.replace(char, '-')
         return cleaned.encode('latin-1', 'replace').decode('latin-1')
@@ -1087,38 +836,10 @@ def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level,
     pdf.set_text_color(48, 43, 99)
     pdf.cell(0, 7, c_txt("1. Student Profile & Diagnostic Baseline"), 0, 1, "L")
     pdf.set_font("Arial", "", 8.5)
-=======
-        for char in ['🎓', '📚', '💳', '⚠️', '💸', '🧠', '📉', '✏️', '🔍', '✅', '📈', '💰', '🏠', '🔴', '🟡', '🟢', '🟣', '⚡']:
-            cleaned = cleaned.replace(char, '-')
-        return cleaned.encode('latin-1', 'replace').decode('latin-1')
-
-    # Deep Space/Purple Theme Colors
-    pdf.set_fill_color(15, 12, 41)
-    pdf.set_text_color(255, 255, 255)
-    
-    # Title Banner
-    pdf.rect(0, 0, 210, 40, "F")
-    pdf.set_y(12)
-    pdf.set_font("Arial", "B", 18)
-    pdf.cell(0, 8, c_txt("STUDENT EARLY WARNING & INTERVENTION REPORT"), 0, 1, "C")
-    pdf.set_font("Arial", "", 10)
-    pdf.cell(0, 6, c_txt("Generated by EduGuard Early Warning System | Predictive Insights"), 0, 1, "C")
-    
-    # Content Reset
-    pdf.set_text_color(51, 65, 85)
-    pdf.set_y(48)
-    
-    # Section: Student Details
-    pdf.set_font("Arial", "B", 13)
-    pdf.set_text_color(48, 43, 99)
-    pdf.cell(0, 8, c_txt("1. Student Profile & Metadata"), 0, 1, "L")
-    pdf.set_font("Arial", "", 9)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     pdf.set_text_color(71, 85, 105)
     
     metadata_fields = [
         ("Student ID", f"#{student_id}"),
-<<<<<<< HEAD
         ("Age at Enrollment", f"{student_row.get('Age_at_enrollment', student_row.get('Age at enrollment', 'N/A'))} yrs"),
         ("Scholarship Holder", "Yes" if student_row.get('Scholarship_holder', student_row.get('Scholarship holder', 0)) == 1 else "No"),
         ("Tuition Up to Date", "Yes" if student_row.get('Tuition_fees_up_to_date', student_row.get('Tuition fees up to date', 0)) == 1 else "No"),
@@ -1126,23 +847,11 @@ def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level,
         ("Academic Stress Index", f"{student_row.get('Academic_Stress_Index', 0.0):.2f}"),
         ("Grade Drop (S1 - S2)", f"{student_row.get('Grade_Drop', 0.0):.2f}"),
         ("Activity Span", f"{student_row.get('Activity_Span', 0.8):.2f}")
-=======
-        ("Age at Enrollment", f"{student_row.get('Age at enrollment', 'N/A')} yrs"),
-        ("Gender", "Male" if student_row.get('Gender', 0) == 1 else "Female"),
-        ("Scholarship Holder", "Yes" if student_row.get('Scholarship holder', 0) == 1 else "No"),
-        ("Tuition Fees Up to Date", "Yes" if student_row.get('Tuition fees up to date', 0) == 1 else "No"),
-        ("Institutional Debtor", "Yes" if student_row.get('Debtor', 0) == 1 else "No"),
-        ("Course Code", f"{student_row.get('Course', 'N/A')}"),
-        ("Admission Grade", f"{student_row.get('Admission grade', 'N/A')}/200"),
-        ("Academic Stress Index", f"{student_row.get('Academic_Stress_Index', 0.0):.2f}"),
-        ("Grade Drop (S1 - S2)", f"{student_row.get('Grade_Drop', 0.0):.2f}")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     ]
     
     for i in range(0, len(metadata_fields), 2):
         k1, v1 = metadata_fields[i]
         k2, v2 = metadata_fields[i+1] if i+1 < len(metadata_fields) else ("", "")
-<<<<<<< HEAD
         pdf.cell(45, 6, f"  {c_txt(k1)}:", 1, 0, "L")
         pdf.cell(50, 6, f"  {c_txt(v1)}", 1, 0, "L")
         pdf.cell(45, 6, f"  {c_txt(k2)}:", 1, 0, "L")
@@ -1154,19 +863,6 @@ def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level,
     pdf.set_font("Arial", "B", 12)
     pdf.set_text_color(48, 43, 99)
     pdf.cell(0, 7, c_txt("2. AI Risk Stratification (Multi-Model Consensus)"), 0, 1, "L")
-=======
-        pdf.cell(45, 7, f"  {c_txt(k1)}:", 1, 0, "L")
-        pdf.cell(50, 7, f"  {c_txt(v1)}", 1, 0, "L")
-        pdf.cell(45, 7, f"  {c_txt(k2)}:", 1, 0, "L")
-        pdf.cell(50, 7, f"  {c_txt(v2)}", 1, 1, "L")
-        
-    pdf.ln(5)
-    
-    # Section: Risk Assessment
-    pdf.set_font("Arial", "B", 13)
-    pdf.set_text_color(48, 43, 99)
-    pdf.cell(0, 8, c_txt("2. AI Risk Assessment Matrix"), 0, 1, "L")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     
     if risk_level == "Critical":
         pdf.set_fill_color(118, 75, 162)
@@ -1182,7 +878,6 @@ def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level,
         text_color = (255, 255, 255)
         
     pdf.set_text_color(*text_color)
-<<<<<<< HEAD
     pdf.set_font("Arial", "B", 10)
     pdf.cell(190, 8, f" STRATIFIED RISK LEVEL: {risk_level.upper()} RISK  (Dropout Probability: {risk_proba:.2%})", 0, 1, "C", True)
     
@@ -1221,47 +916,11 @@ def generate_student_pdf_report(student_id, student_row, risk_proba, risk_level,
     pdf.set_font("Arial", "I", 7.5)
     pdf.set_text_color(148, 163, 184)
     pdf.cell(0, 6, c_txt("Confidential Dossier. Designed for internal Academic Advising & Counseling Offices only."), 0, 0, "C")
-=======
-    pdf.set_font("Arial", "B", 11)
-    pdf.cell(190, 10, f" RISK LEVEL: {risk_level.upper()} RISK  (Dropout Probability: {risk_proba:.2%})", 0, 1, "C", True)
-    
-    pdf.ln(5)
-    pdf.set_text_color(71, 85, 105)
-    
-    # Section: Why At Risk
-    pdf.set_font("Arial", "B", 13)
-    pdf.set_text_color(48, 43, 99)
-    pdf.cell(0, 8, c_txt("3. Explainable AI Risk Drivers"), 0, 1, "L")
-    pdf.set_font("Arial", "", 9.5)
-    pdf.set_text_color(51, 65, 85)
-    
-    pdf.multi_cell(0, 5, c_txt(why_at_risk))
-    pdf.ln(5)
-    
-    # Section: Recommendations
-    pdf.set_font("Arial", "B", 13)
-    pdf.set_text_color(48, 43, 99)
-    pdf.cell(0, 8, c_txt("4. Targeted Action Plan"), 0, 1, "L")
-    pdf.set_font("Arial", "", 9.5)
-    pdf.set_text_color(51, 65, 85)
-    
-    for rec in recommendations:
-        pdf.multi_cell(0, 5, f"- {c_txt(rec)}")
-        
-    pdf.ln(10)
-    pdf.set_font("Arial", "I", 8)
-    pdf.set_text_color(148, 163, 184)
-    pdf.cell(0, 8, c_txt("Confidential Dossier. Designed for internal academic advising use only."), 0, 0, "C")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     
     return pdf.output()
 
 
-<<<<<<< HEAD
 # ============= MAIN APPLICATION =============
-=======
-# ============= MAIN APP =============
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
 def main():
     # Load dataset
     df = load_data()
@@ -1269,17 +928,10 @@ def main():
         st.error("No dataset available. Please ensure data is loaded properly.")
         return
         
-<<<<<<< HEAD
     # Engineer comprehensive multi-paper features
     df_engineered = engineer_features(df)
     
     # Train 10 ML models and compare
-=======
-    # Engineer features
-    df_engineered = engineer_features(df)
-    
-    # Train models and compare
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     (fitted_models, comparison_df, X_train, X_test, 
      y_train, y_test, X_train_res, y_train_res, scaler) = train_and_compare_models(df_engineered)
     
@@ -1297,22 +949,15 @@ def main():
 
     # SIDEBAR NAVIGATION
     st.sidebar.markdown("""
-<<<<<<< HEAD
         <div style="text-align: center; margin-bottom: 20px;">
             <h2 style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.1rem; margin: 0;">🎓 EduGuard</h2>
             <p style="color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px;">30-Paper Early Warning Platform</p>
-=======
-        <div style="text-align: center; margin-bottom: 25px;">
-            <h2 style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.2rem; margin: 0;">🎓 EduGuard</h2>
-            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px;">Early Warning Dashboard</p>
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         </div>
     """, unsafe_allow_html=True)
     
     menu = [
         "🏠 Dashboard", 
         "📊 Data Explorer", 
-<<<<<<< HEAD
         "🤖 Model Hub (10 Models & PR Curves)", 
         "⚠️ Early Warning System", 
         "🔮 Predictor & XAI Engine",
@@ -1321,15 +966,6 @@ def main():
         "📈 Reports & Dossier Export"
     ]
     
-=======
-        "🤖 Model Hub", 
-        "⚠️ Early Warning System", 
-        "🔮 Predictor", 
-        "📈 Reports"
-    ]
-    
-    # Stateful navigation radio
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     active_idx = menu.index(st.session_state.navigation) if st.session_state.navigation in menu else 0
     choice = st.sidebar.radio("Select Navigation", menu, index=active_idx, key="nav_radio", label_visibility="collapsed")
     if choice != st.session_state.navigation:
@@ -1339,20 +975,13 @@ def main():
     st.sidebar.markdown("---")
     
     # Global Model Selector
-<<<<<<< HEAD
     st.sidebar.markdown("### 🤖 Active ML Classifier")
     st.session_state.selected_model_name = st.sidebar.selectbox(
         "Choose Model Architecture:", 
-=======
-    st.sidebar.markdown("### 🤖 Active Prediction Model")
-    st.session_state.selected_model_name = st.sidebar.selectbox(
-        "Choose Model:", 
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         list(fitted_models.keys()), 
         index=list(fitted_models.keys()).index(st.session_state.selected_model_name)
     )
     
-<<<<<<< HEAD
     # Model Architecture Quick Info
     model_meta = {
         'Random Forest': "Ensemble Trees | Papers 1, 5, 17, 19, 23",
@@ -1370,10 +999,6 @@ def main():
     
     # Global Controls
     st.sidebar.markdown("### ⚙️ Upload Custom Dataset")
-=======
-    # Global Controls
-    st.sidebar.markdown("### ⚙️ Upload Custom Data")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
     uploaded_file = st.sidebar.file_uploader("Upload custom CSV", type=['csv'])
     if uploaded_file is not None:
         df = load_data(uploaded_file)
@@ -1383,37 +1008,22 @@ def main():
         st.sidebar.success("Custom Dataset Loaded!")
         
     st.sidebar.markdown("---")
-<<<<<<< HEAD
     st.sidebar.info("💡 Powered by 30 Published Research Frameworks")
 
     # Probabilities calculation based on active model
     model = fitted_models[st.session_state.selected_model_name]
     scaled_models = ['Logistic Regression', 'Support Vector Machine', 'k-Nearest Neighbors (KNN)', 'Neural Network (MLP)']
     if st.session_state.selected_model_name in scaled_models:
-=======
-    st.sidebar.info("💡 Version 2.5.0 (Early Warning Engine)")
-
-    # Probabilities calculation based on active model
-    model = fitted_models[st.session_state.selected_model_name]
-    if st.session_state.selected_model_name == 'Logistic Regression':
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         probs = model.predict_proba(scaler.transform(X_test))[:, 0]
     else:
         probs = model.predict_proba(X_test)[:, 0]
 
-<<<<<<< HEAD
     # =========================================================================
     # 1. DASHBOARD PAGE
     # =========================================================================
     if st.session_state.navigation == "🏠 Dashboard":
         st.markdown('<h1 class="main-title">🎓 Student Dropout Early Warning System</h1>', unsafe_allow_html=True)
         st.markdown('<p class="subtitle">Multi-model predictive retention engine synthesized from 30 empirical educational data mining studies.</p>', unsafe_allow_html=True)
-=======
-    # 1. DASHBOARD PAGE
-    if st.session_state.navigation == "🏠 Dashboard":
-        st.markdown('<h1 class="main-title">🎓 Student Dropout Early Warning System</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Real-time predictive analytics platform to identify and mitigate academic dropout risk.</p>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
         # Calculate Key Metrics
         total_students = len(df_engineered)
@@ -1431,23 +1041,14 @@ def main():
         critical_count = (probs >= 0.90).sum()
         high_count = ((probs >= 0.70) & (probs < 0.90)).sum()
         
-<<<<<<< HEAD
         # Metric Cards
-=======
-        # Metric Cards with glass styling
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
         with m_col1:
             st.markdown(f"""
                 <div class="glass-card kpi-container">
                     <div>
-<<<<<<< HEAD
                         <p style="margin:0; font-size: 0.85rem; color: rgba(255,255,255,0.6)">Total Cohort Size</p>
                         <h2 style="margin:4px 0 0 0; font-size: 2.1rem; font-weight:800;">{total_students:,}</h2>
-=======
-                        <p style="margin:0; font-size: 0.9rem; color: rgba(255,255,255,0.6)">Total Students</p>
-                        <h2 style="margin:5px 0 0 0; font-size: 2.2rem; font-weight:800;">{total_students:,}</h2>
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     </div>
                     <div class="kpi-icon" style="background: rgba(102, 126, 234, 0.15); color: #667eea;">👥</div>
                 </div>
@@ -1456,13 +1057,8 @@ def main():
             st.markdown(f"""
                 <div class="glass-card kpi-container">
                     <div>
-<<<<<<< HEAD
                         <p style="margin:0; font-size: 0.85rem; color: rgba(255,255,255,0.6)">Cohort Dropout Rate</p>
                         <h2 style="margin:4px 0 0 0; font-size: 2.1rem; font-weight:800; color: #f5576c;">{dropout_rate:.1f}%</h2>
-=======
-                        <p style="margin:0; font-size: 0.9rem; color: rgba(255,255,255,0.6)">Dropout Rate</p>
-                        <h2 style="margin:5px 0 0 0; font-size: 2.2rem; font-weight:800; color: #f5576c;">{dropout_rate:.1f}%</h2>
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     </div>
                     <div class="kpi-icon" style="background: rgba(245, 87, 108, 0.15); color: #f5576c;">📈</div>
                 </div>
@@ -1471,13 +1067,8 @@ def main():
             st.markdown(f"""
                 <div class="glass-card kpi-container">
                     <div>
-<<<<<<< HEAD
                         <p style="margin:0; font-size: 0.85rem; color: rgba(255,255,255,0.6)">Critical Triage (≥90%)</p>
                         <h2 style="margin:4px 0 0 0; font-size: 2.1rem; font-weight:800; color: #f093fb;">{critical_count}</h2>
-=======
-                        <p style="margin:0; font-size: 0.9rem; color: rgba(255,255,255,0.6)">Critical Risk (>=90%)</p>
-                        <h2 style="margin:5px 0 0 0; font-size: 2.2rem; font-weight:800; color: #f093fb;">{critical_count}</h2>
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     </div>
                     <div class="kpi-icon" style="background: rgba(240, 147, 251, 0.15); color: #f093fb;">🚨</div>
                 </div>
@@ -1486,31 +1077,18 @@ def main():
             st.markdown(f"""
                 <div class="glass-card kpi-container">
                     <div>
-<<<<<<< HEAD
                         <p style="margin:0; font-size: 0.85rem; color: rgba(255,255,255,0.6)">High Risk (70-89%)</p>
                         <h2 style="margin:4px 0 0 0; font-size: 2.1rem; font-weight:800; color: #fee2e2;">{high_count}</h2>
-=======
-                        <p style="margin:0; font-size: 0.9rem; color: rgba(255,255,255,0.6)">High Risk (70-89%)</p>
-                        <h2 style="margin:5px 0 0 0; font-size: 2.2rem; font-weight:800; color: #fee2e2;">{high_count}</h2>
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     </div>
                     <div class="kpi-icon" style="background: rgba(254, 226, 226, 0.15); color: #fee2e2;">⚠️</div>
                 </div>
             """, unsafe_allow_html=True)
             
-<<<<<<< HEAD
         col_left, col_right = st.columns([1.6, 1.4])
         
         with col_left:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.2rem;">📊 Real-time 4-Tier Risk Distribution</h3>', unsafe_allow_html=True)
-=======
-        col_left, col_right = st.columns([2, 1])
-        
-        with col_left:
-            st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-            st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.25rem;">📊 Real-time Risk Distribution</h3>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             
             risk_series = pd.Series(probs).apply(
                 lambda p: 'Critical (>=90%)' if p >= 0.90 else ('High (70-89%)' if p >= 0.70 else ('Medium (40-69%)' if p >= 0.40 else 'Low (<40%)'))
@@ -1529,31 +1107,21 @@ def main():
                     'Medium (40-69%)': '#f59e0b',
                     'Low (<40%)': '#10b981'
                 },
-<<<<<<< HEAD
                 hole=0.42
-=======
-                hole=0.4
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             )
             fig.update_layout(
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
                 font_color='#ffffff',
                 margin=dict(t=10, b=10, l=10, r=10),
-<<<<<<< HEAD
                 height=300,
                 legend=dict(orientation="h", yanchor="bottom", y=-0.15, xanchor="center", x=0.5)
-=======
-                height=320,
-                legend=dict(orientation="h", yanchor="bottom", y=-0.1, xanchor="center", x=0.5)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             )
             st.plotly_chart(fig, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
         with col_right:
             st.markdown('<div class="glass-card" style="height: 100%;">', unsafe_allow_html=True)
-<<<<<<< HEAD
             st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.2rem;">🔬 Literature Foundation Highlights</h3>', unsafe_allow_html=True)
             
             # Literature Algorithm Popularity from Lopez-Muñoz et al. (2026)
@@ -1577,29 +1145,11 @@ def main():
                 coloraxis_showscale=False
             )
             st.plotly_chart(fig_lit, use_container_width=True)
-=======
-            st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.25rem;">✨ Core Retention Innovations</h3>', unsafe_allow_html=True)
-            st.write("""
-            Our **Early Warning System (EWS)** predicts student dropout risk before disengagement occurs.
-            By incorporating 6 unique composite features, the dashboard flags critical outliers and links explanations to tailored action plans.
-            """)
-            st.write("**Innovative features added:**")
-            st.markdown("""
-            - 📈 **Grade Drop Tracker**
-            - 💳 **Financial Vulnerability Score**
-            - 🧠 **Academic Stress Index**
-            - 🔬 **SHAP & LIME Interpretability**
-            """)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             st.markdown('</div>', unsafe_allow_html=True)
             
         # Recent High-Risk Students List
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-<<<<<<< HEAD
         st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.2rem;">🚨 High Risk Students Requiring Priority ADPoCS Triage</h3>', unsafe_allow_html=True)
-=======
-        st.markdown('<h3 style="margin:0 0 20px 0; font-size: 1.25rem;">🚨 High Risk Students requiring immediate mediation</h3>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
         test_summary = X_test.copy()
         test_summary['Dropout_Probability'] = probs
@@ -1608,10 +1158,6 @@ def main():
         )
         test_summary['Student_ID'] = test_summary.index + 10000
         
-<<<<<<< HEAD
-=======
-        # Select Critical/High
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         critical_df = test_summary[test_summary['Risk_Level'].isin(['Critical', 'High'])].sort_values('Dropout_Probability', ascending=False).head(5)
         
         if len(critical_df) > 0:
@@ -1619,21 +1165,12 @@ def main():
                 c1, c2 = st.columns([5, 1])
                 with c1:
                     st.markdown(f"""
-<<<<<<< HEAD
                         <div style="padding: 12px 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
                             <div>
                                 <span style="font-weight: 700; color: #ffffff; font-size: 1rem;">Student #{row['Student_ID']}</span>
                                 <span style="margin-left: 15px; color: rgba(255,255,255,0.6); font-size: 0.85rem;">Course: {row.get('Course', 0):.0f}</span>
                                 <span style="margin-left: 15px; color: rgba(255,255,255,0.6); font-size: 0.85rem;">Stress Index: {row.get('Academic_Stress_Index', 0.0):.1f}</span>
                                 <span style="margin-left: 15px; color: rgba(255,255,255,0.6); font-size: 0.85rem;">Activity Span: {row.get('Activity_Span', 0.8):.2f}</span>
-=======
-                        <div style="padding: 14px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                            <div>
-                                <span style="font-weight: 700; color: #ffffff; font-size: 1.05rem;">Student #{row['Student_ID']}</span>
-                                <span style="margin-left: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">Course Code: {row['Course']:.0f}</span>
-                                <span style="margin-left: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">Stress Index: {row['Academic_Stress_Index']:.1f}</span>
-                                <span style="margin-left: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">Grade Drop: {row['Grade_Drop']:.1f}</span>
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                             </div>
                             <div>
                                 <span class="risk-badge risk-{row['Risk_Level'].lower()}">{row['Risk_Level']} ({row['Dropout_Probability']:.1%})</span>
@@ -1649,7 +1186,6 @@ def main():
             
         st.markdown('</div>', unsafe_allow_html=True)
 
-<<<<<<< HEAD
     # =========================================================================
     # 2. DATA EXPLORER PAGE
     # =========================================================================
@@ -1664,25 +1200,12 @@ def main():
             "📈 Multi-Paper Composite Features",
             "🔍 Interactive Feature Explorer"
         ])
-=======
-
-    # 2. DATA EXPLORER PAGE
-    elif st.session_state.navigation == "📊 Data Explorer":
-        st.markdown('<h1 class="main-title">📊 Exploratory Data Analysis</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Investigate correlation trends, student demographics, and the impacts of composite features.</p>', unsafe_allow_html=True)
-        
-        tab1, tab2, tab3, tab4 = st.tabs(["👥 Student Demographics", "📚 Academic Performance", "⚠️ Risk Co-factors", "🔍 Interactive Plotter"])
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
         with tab1:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             col1, col2, col3 = st.columns(3)
             with col1:
-<<<<<<< HEAD
                 fig_age = px.histogram(df_engineered, x="Age at enrollment", title="Age at Enrollment Distribution (Paper 24)", color_discrete_sequence=['#764ba2'])
-=======
-                fig_age = px.histogram(df_engineered, x="Age at enrollment", title="Age at Enrollment Distribution", color_discrete_sequence=['#764ba2'])
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 fig_age.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#ffffff')
                 st.plotly_chart(fig_age, use_container_width=True)
             with col2:
@@ -1694,11 +1217,7 @@ def main():
             with col3:
                 schol_df = df_engineered['Scholarship holder'].map({0: 'No Scholarship', 1: 'Scholarship Holder'}).value_counts().reset_index()
                 schol_df.columns = ['Scholarship Status', 'Count']
-<<<<<<< HEAD
                 fig_schol = px.pie(schol_df, values='Count', names='Scholarship Status', title="Scholarship Status Breakdown", color_discrete_sequence=['#10b981', '#f5576c'])
-=======
-                fig_schol = px.pie(schol_df, values='Count', names='Scholarship Status', title="Scholarship Status", color_discrete_sequence=['#10b981', '#f5576c'])
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 fig_schol.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#ffffff')
                 st.plotly_chart(fig_schol, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
@@ -1706,7 +1225,6 @@ def main():
         with tab2:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             col1, col2 = st.columns(2)
-<<<<<<< HEAD
             df_viz = df_engineered.copy()
             if df_viz['Target'].dtype in [int, np.int64]:
                 df_viz['Target'] = df_viz['Target'].map(REVERSE_TARGET_MAPPING)
@@ -1717,17 +1235,6 @@ def main():
                 st.plotly_chart(fig_box1, use_container_width=True)
             with col2:
                 fig_box2 = px.box(df_viz, x="Target", y="Grade_Drop", title="Grade Drop Index (S1 - S2) vs Outcome (Paper 23)", color="Target")
-=======
-            with col1:
-                df_viz = df_engineered.copy()
-                if df_viz['Target'].dtype in [int, np.int64]:
-                    df_viz['Target'] = df_viz['Target'].map(REVERSE_TARGET_MAPPING)
-                fig_box1 = px.box(df_viz, x="Target", y="Curricular units 1st sem (grade)", title="1st Sem average grade vs Outcome", color="Target")
-                fig_box1.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#ffffff')
-                st.plotly_chart(fig_box1, use_container_width=True)
-            with col2:
-                fig_box2 = px.box(df_viz, x="Target", y="Grade_Drop", title="Grade Drop (S1 - S2) vs Outcome", color="Target")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 fig_box2.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#ffffff')
                 st.plotly_chart(fig_box2, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
@@ -1737,7 +1244,6 @@ def main():
             col1, col2 = st.columns(2)
             with col1:
                 debt_cross = pd.crosstab(df_engineered['Debtor'], df_engineered['Target']).reset_index()
-<<<<<<< HEAD
                 debt_cross['Debtor'] = debt_cross['Debtor'].map({0: 'No Debt', 1: 'Active Institutional Debt'})
                 if 0 in debt_cross.columns:
                     debt_cross.rename(columns={0: 'Dropout', 1: 'Graduate', 2: 'Enrolled'}, inplace=True)
@@ -1746,23 +1252,12 @@ def main():
                 st.plotly_chart(fig_debt, use_container_width=True)
             with col2:
                 stress_box = px.box(df_viz, x="Target", y="Academic_Stress_Index", title="Academic Stress Index vs Dropout Outcome (Paper 1)", color="Target")
-=======
-                debt_cross['Debtor'] = debt_cross['Debtor'].map({0: 'No Debt', 1: 'Active Debt'})
-                if 0 in debt_cross.columns:
-                    debt_cross.rename(columns={0: 'Dropout', 1: 'Graduate', 2: 'Enrolled'}, inplace=True)
-                fig_debt = px.bar(debt_cross, x='Debtor', y=['Dropout', 'Graduate', 'Enrolled'], title="Dropout Breakdown by Debt Status", barmode='group')
-                fig_debt.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#ffffff')
-                st.plotly_chart(fig_debt, use_container_width=True)
-            with col2:
-                stress_box = px.box(df_viz, x="Target", y="Academic_Stress_Index", title="Academic Stress Index vs Outcome", color="Target")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 stress_box.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color='#ffffff')
                 st.plotly_chart(stress_box, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
         with tab4:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-<<<<<<< HEAD
             st.markdown("### 🔬 Multi-Paper Engineered Features Overview")
             st.write("EduGuard incorporates 9 high-impact engineered indicators derived from literature recommendations:")
             
@@ -1780,9 +1275,6 @@ def main():
         with tab5:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown('<h4 style="margin:0 0 15px 0;">Interactive Feature Scatter Correlation</h4>', unsafe_allow_html=True)
-=======
-            st.markdown('<h4 style="margin:0 0 15px 0;">Interactive Feature Explorer</h4>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             feat_list = [c for c in df_engineered.columns if c != 'Target']
             
             c_sel1, c_sel2 = st.columns(2)
@@ -1796,7 +1288,6 @@ def main():
             st.plotly_chart(fig_scatter, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
 
-<<<<<<< HEAD
     # =========================================================================
     # 3. MODEL HUB (10 MODELS & PR CURVES)
     # =========================================================================
@@ -1825,31 +1316,6 @@ def main():
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown(f'<h3 style="margin:0 0 10px 0; font-size: 1.15rem;">📊 Multi-Class ROC Curves ({st.session_state.selected_model_name})</h3>', unsafe_allow_html=True)
             
-=======
-
-    # 3. MODEL HUB PAGE
-    elif st.session_state.navigation == "🤖 Model Hub":
-        st.markdown('<h1 class="main-title">🤖 Model Performance Hub</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Evaluate and compare prediction architectures. Visualise confusion matrices and global explanations.</p>', unsafe_allow_html=True)
-        
-        st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-        st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.25rem;">📈 Performance Table (Macro Averages)</h3>', unsafe_allow_html=True)
-        st.dataframe(comparison_df.style.background_gradient(cmap='Purples', subset=['Accuracy', 'F1-Score', 'ROC_AUC']), use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-            st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.25rem;">📊 Multi-Class ROC Curves</h3>', unsafe_allow_html=True)
-            
-            # ROC Curves
-            eval_model = fitted_models[st.session_state.selected_model_name]
-            if st.session_state.selected_model_name == 'Logistic Regression':
-                test_probs = eval_model.predict_proba(scaler.transform(X_test))
-            else:
-                test_probs = eval_model.predict_proba(X_test)
-                
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             fig_roc = go.Figure()
             for cls_id, cls_name in REVERSE_TARGET_MAPPING.items():
                 y_test_bin = (y_test == cls_id).astype(int)
@@ -1864,17 +1330,12 @@ def main():
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
                 font_color='#ffffff',
-<<<<<<< HEAD
                 height=280,
-=======
-                height=300,
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 margin=dict(t=10, b=10, l=10, r=10)
             )
             st.plotly_chart(fig_roc, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
-<<<<<<< HEAD
         with col_c2:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown(f'<h3 style="margin:0 0 10px 0; font-size: 1.15rem;">🎯 Precision-Recall (PR) Curves — Paper 2 (Lee & Chung)</h3>', unsafe_allow_html=True)
@@ -1903,18 +1364,6 @@ def main():
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown('<h3 style="margin:0 0 10px 0; font-size: 1.15rem;">🧩 Confusion Matrix Heatmap</h3>', unsafe_allow_html=True)
             
-=======
-        with col2:
-            st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-            st.markdown('<h3 style="margin:0 0 15px 0; font-size: 1.25rem;">🧩 Confusion Matrix</h3>', unsafe_allow_html=True)
-            
-            # Confusion Matrix Heatmap
-            if st.session_state.selected_model_name == 'Logistic Regression':
-                y_pred = eval_model.predict(scaler.transform(X_test))
-            else:
-                y_pred = eval_model.predict(X_test)
-                
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             cm = confusion_matrix(y_test, y_pred)
             class_names = ['Dropout', 'Graduate', 'Enrolled']
             
@@ -1933,17 +1382,12 @@ def main():
                 paper_bgcolor='rgba(0,0,0,0)',
                 plot_bgcolor='rgba(0,0,0,0)',
                 font_color='#ffffff',
-<<<<<<< HEAD
                 height=260,
-=======
-                height=300,
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 margin=dict(t=10, b=10, l=10, r=10)
             )
             st.plotly_chart(fig_cm, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
-<<<<<<< HEAD
         with col_exp:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown('<h3 style="margin:0 0 10px 0; font-size: 1.15rem;">🔬 Explainability Index (IE_XAI) — Paper 16 (Melo et al.)</h3>', unsafe_allow_html=True)
@@ -1960,10 +1404,6 @@ def main():
             
         # Global Feature Importance section
         st.markdown('<h2 class="section-header">🌍 Global Feature Importance & SHAP Values (Papers 15, 16, 29)</h2>', unsafe_allow_html=True)
-=======
-        # Global Feature Importance section
-        st.markdown('<h2 class="section-header">🌍 Global Feature Importance & SHAP Values</h2>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
         
         rf_model = fitted_models['Random Forest']
@@ -1979,11 +1419,7 @@ def main():
                 col_shap1, col_shap2 = st.columns(2)
                 
                 with col_shap1:
-<<<<<<< HEAD
                     st.markdown("**SHAP Global Beeswarm Summary (Dropout Class)**")
-=======
-                    st.markdown("**SHAP Global Beeswarm Summary (Dropout)**")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     fig_shap, ax = plt.subplots(figsize=(8, 6))
                     shap.summary_plot(shap_values_class0, X_sample, show=False)
                     fig_shap.patch.set_facecolor('none')
@@ -1995,10 +1431,6 @@ def main():
                         item.set_color('#ffffff')
                     st.pyplot(fig_shap, clear_figure=True)
                     
-<<<<<<< HEAD
-=======
-                    # Download plot button
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     buf = io.BytesIO()
                     fig_shap.savefig(buf, format="png", bbox_inches='tight', facecolor='none')
                     buf.seek(0)
@@ -2010,11 +1442,7 @@ def main():
                     )
                     
                 with col_shap2:
-<<<<<<< HEAD
                     st.markdown("**Mean Absolute Feature Importances (Global Attribution)**")
-=======
-                    st.markdown("**Mean Absolute Feature Importances**")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     mean_shap = np.abs(shap_values_class0).mean(axis=0)
                     shap_imp_df = pd.DataFrame({'Feature': X_sample.columns, 'SHAP Value': mean_shap}).sort_values('SHAP Value', ascending=False).head(12)
                     
@@ -2023,7 +1451,6 @@ def main():
                     st.plotly_chart(fig_bar_shap, use_container_width=True)
                     
             except Exception as e:
-<<<<<<< HEAD
                 st.error(f"SHAP explainer notice: {e}")
                 
         st.markdown('</div>', unsafe_allow_html=True)
@@ -2034,17 +1461,6 @@ def main():
     elif st.session_state.navigation == "⚠️ Early Warning System":
         st.markdown('<h1 class="main-title">⚠️ Early Warning & Triage Directory</h1>', unsafe_allow_html=True)
         st.markdown('<p class="subtitle">Real-time student risk triage directory. Review ADPoCS AI counseling dossiers and run batch predictions.</p>', unsafe_allow_html=True)
-=======
-                st.error(f"Failed to load SHAP global explainers: {e}")
-                
-        st.markdown('</div>', unsafe_allow_html=True)
-
-
-    # 4. EARLY WARNING SYSTEM PAGE
-    elif st.session_state.navigation == "⚠️ Early Warning System":
-        st.markdown('<h1 class="main-title">⚠️ Early Warning & Triage Directory</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Filter and analyze student risk directories in real-time. Review AI intervention dossiers and process batch files.</p>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
         # Construct full test results
         test_df = X_test.copy()
@@ -2062,7 +1478,6 @@ def main():
         # Risk Triage Row
         col_c1, col_c2, col_c3, col_c4, col_c5 = st.columns(5)
         with col_c1:
-<<<<<<< HEAD
             st.markdown(f'<div class="glass-card" style="padding:14px; border-left: 4px solid #667eea;"><p style="margin:0; font-size:0.75rem; color:rgba(255,255,255,0.6);">Total Evaluated</p><h3 style="margin:4px 0 0 0; font-size:1.6rem;">{len(test_df)}</h3></div>', unsafe_allow_html=True)
         with col_c2:
             st.markdown(f'<div class="glass-card" style="padding:14px; border-left: 4px solid #764ba2;"><p style="margin:0; font-size:0.75rem; color:rgba(255,255,255,0.6);">🟣 Critical (≥90%)</p><h3 style="margin:4px 0 0 0; font-size:1.6rem; color:#f093fb;">{c_purple}</h3></div>', unsafe_allow_html=True)
@@ -2072,17 +1487,6 @@ def main():
             st.markdown(f'<div class="glass-card" style="padding:14px; border-left: 4px solid #f59e0b;"><p style="margin:0; font-size:0.75rem; color:rgba(255,255,255,0.6);">🟡 Medium (40-69%)</p><h3 style="margin:4px 0 0 0; font-size:1.6rem; color:#fbbf24;">{c_orange}</h3></div>', unsafe_allow_html=True)
         with col_c5:
             st.markdown(f'<div class="glass-card" style="padding:14px; border-left: 4px solid #10b981;"><p style="margin:0; font-size:0.75rem; color:rgba(255,255,255,0.6);">🟢 Low (<40%)</p><h3 style="margin:4px 0 0 0; font-size:1.6rem; color:#34d399;">{c_green}</h3></div>', unsafe_allow_html=True)
-=======
-            st.markdown(f'<div class="glass-card" style="padding:16px; border-left: 4px solid #667eea;"><p style="margin:0; font-size:0.8rem; color:rgba(255,255,255,0.6);">Total Directory</p><h3 style="margin:5px 0 0 0; font-size:1.8rem;">{len(test_df)}</h3></div>', unsafe_allow_html=True)
-        with col_c2:
-            st.markdown(f'<div class="glass-card" style="padding:16px; border-left: 4px solid #764ba2;"><p style="margin:0; font-size:0.8rem; color:rgba(255,255,255,0.6);">🟣 Critical (>=90%)</p><h3 style="margin:5px 0 0 0; font-size:1.8rem; color:#f093fb;">{c_purple}</h3></div>', unsafe_allow_html=True)
-        with col_c3:
-            st.markdown(f'<div class="glass-card" style="padding:16px; border-left: 4px solid #ef4444;"><p style="margin:0; font-size:0.8rem; color:rgba(255,255,255,0.6);">🔴 High (70-89%)</p><h3 style="margin:5px 0 0 0; font-size:1.8rem; color:#f87171;">{c_red}</h3></div>', unsafe_allow_html=True)
-        with col_c4:
-            st.markdown(f'<div class="glass-card" style="padding:16px; border-left: 4px solid #f59e0b;"><p style="margin:0; font-size:0.8rem; color:rgba(255,255,255,0.6);">🟡 Medium (40-69%)</p><h3 style="margin:5px 0 0 0; font-size:1.8rem; color:#fbbf24;">{c_orange}</h3></div>', unsafe_allow_html=True)
-        with col_c5:
-            st.markdown(f'<div class="glass-card" style="padding:16px; border-left: 4px solid #10b981;"><p style="margin:0; font-size:0.8rem; color:rgba(255,255,255,0.6);">🟢 Low (<40%)</p><h3 style="margin:5px 0 0 0; font-size:1.8rem; color:#34d399;">{c_green}</h3></div>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             
         ews_tab1, ews_tab2 = st.tabs(["📋 Student Risk Directory", "📤 CSV Batch Prediction"])
         
@@ -2094,28 +1498,16 @@ def main():
             with col_f1:
                 f_risk = st.multiselect("Filter Risk Level:", ['Critical', 'High', 'Medium', 'Low'], default=['Critical', 'High'])
             with col_f2:
-<<<<<<< HEAD
                 courses = sorted(list(test_df['Course'].unique())) if 'Course' in test_df.columns else []
-=======
-                courses = sorted(list(test_df['Course'].unique()))
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 f_course = st.multiselect("Filter Course:", courses)
             with col_f3:
                 f_gender = st.selectbox("Gender:", ["All", "Male", "Female"])
             with col_f4:
                 f_schol = st.selectbox("Scholarship Status:", ["All", "Has Scholarship", "No Scholarship"])
                 
-<<<<<<< HEAD
             default_search = ""
             if st.session_state.selected_student_id is not None:
                 default_search = str(st.session_state.selected_student_id)
-=======
-            # Set default search query if selected from dashboard
-            default_search = ""
-            if st.session_state.selected_student_id is not None:
-                default_search = str(st.session_state.selected_student_id)
-                # clear it after read
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 st.session_state.selected_student_id = None
                 
             search_query = st.text_input("🔍 Search Student ID:", value=default_search)
@@ -2124,7 +1516,6 @@ def main():
             filtered_df = test_df.copy()
             if f_risk:
                 filtered_df = filtered_df[filtered_df['Risk_Level'].isin(f_risk)]
-<<<<<<< HEAD
             if f_course and 'Course' in filtered_df.columns:
                 filtered_df = filtered_df[filtered_df['Course'].isin(f_course)]
             if f_gender != "All" and 'Gender' in filtered_df.columns:
@@ -2133,16 +1524,6 @@ def main():
             if f_schol != "All" and 'Scholarship_holder' in filtered_df.columns:
                 s_val = 1 if f_schol == "Has Scholarship" else 0
                 filtered_df = filtered_df[filtered_df['Scholarship_holder'] == s_val]
-=======
-            if f_course:
-                filtered_df = filtered_df[filtered_df['Course'].isin(f_course)]
-            if f_gender != "All":
-                g_val = 1 if f_gender == "Male" else 0
-                filtered_df = filtered_df[filtered_df['Gender'] == g_val]
-            if f_schol != "All":
-                s_val = 1 if f_schol == "Has Scholarship" else 0
-                filtered_df = filtered_df[filtered_df['Scholarship holder'] == s_val]
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             if search_query:
                 try:
                     filtered_df = filtered_df[filtered_df['Student_ID'].astype(str).str.contains(search_query)]
@@ -2151,18 +1532,10 @@ def main():
                     
             st.write(f"Displaying {len(filtered_df)} matched student records.")
             
-<<<<<<< HEAD
             display_cols = [c for c in ['Student_ID', 'Age_at_enrollment', 'Course', 'Curricular_units_1st_sem_(grade)', 'Academic_Stress_Index', 'Dropout_Probability', 'Risk_Level'] if c in filtered_df.columns]
             presentation_df = filtered_df[display_cols].copy()
             presentation_df['Dropout_Probability'] = presentation_df['Dropout_Probability'].apply(lambda x: f"{x:.1%}")
             
-=======
-            display_cols = ['Student_ID', 'Age at enrollment', 'Course', 'Curricular units 1st sem (grade)', 'Dropout_Probability', 'Risk_Level']
-            presentation_df = filtered_df[display_cols].copy()
-            presentation_df['Dropout_Probability'] = presentation_df['Dropout_Probability'].apply(lambda x: f"{x:.1%}")
-            
-            # Display colored dataframe
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             def style_risk(val):
                 if val == 'Critical':
                     return 'background-color: rgba(118, 75, 162, 0.2); color: #f093fb; font-weight: bold;'
@@ -2178,7 +1551,6 @@ def main():
             
             # Detail display section
             if len(filtered_df) > 0:
-<<<<<<< HEAD
                 st.markdown("### 🔍 AI ADPoCS Intervention Dossier")
                 selected_st_id = st.selectbox("Select Student to View AI Dossier:", filtered_df['Student_ID'].tolist())
                 st_row = filtered_df[filtered_df['Student_ID'] == selected_st_id].iloc[0]
@@ -2186,33 +1558,17 @@ def main():
                 shap_val_dict = {}
                 try:
                     rf_model = fitted_models['Random Forest']
-=======
-                st.markdown("### 🔍 AI Intervention Dossier")
-                selected_st_id = st.selectbox("Select Student to View AI Dossier:", filtered_df['Student_ID'].tolist())
-                st_row = filtered_df[filtered_df['Student_ID'] == selected_st_id].iloc[0]
-                
-                # Dynamic approximate SHAP impact dict for explanations
-                shap_val_dict = {}
-                try:
-                    rf_model = fitted_models['Random Forest']
-                    # Approximate local SHAP using feature values relative to median scaled by RF importance
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     for idx, feat in enumerate(X_test.columns):
                         val = st_row[feat]
                         median_val = X_train[feat].median()
                         direction = 1 if val < median_val else -1
-<<<<<<< HEAD
                         if 'Tuition' in feat or 'Debtor' in feat:
-=======
-                        if 'Tuition' in feat or 'Debtor' in feat: # reverse direction
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                             direction = -direction
                         shap_val_dict[feat] = rf_model.feature_importances_[idx] * direction
                 except Exception:
                     pass
                 
                 why_txt = generate_natural_language_explanation(st_row, shap_val_dict)
-<<<<<<< HEAD
                 adpocs_plan = get_adpocs_counseling_plan(st_row, st_row['Dropout_Probability'])
                 
                 col_rec1, col_rec2 = st.columns(2)
@@ -2229,18 +1585,6 @@ def main():
                             st.markdown(f"**{cat_title}:**")
                             for r in items:
                                 st.write(f"- {r}")
-=======
-                recs = get_actionable_recommendations(st_row, st_row['Dropout_Probability'])
-                
-                col_rec1, col_rec2 = st.columns(2)
-                with col_rec1:
-                    st.markdown("#### 🧠 Explainable AI Insight")
-                    st.write(why_txt)
-                with col_rec2:
-                    st.markdown("#### 💡 Targeted Intervention Recommendations")
-                    for r in recs:
-                        st.write(r)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                         
                     # PDF Download Button
                     try:
@@ -2249,19 +1593,11 @@ def main():
                             st_row, 
                             st_row['Dropout_Probability'], 
                             st_row['Risk_Level'], 
-<<<<<<< HEAD
                             adpocs_plan, 
                             why_txt
                         )
                         st.download_button(
                             label=f"📥 Download ADPoCS PDF Dossier for #{selected_st_id}",
-=======
-                            recs, 
-                            why_txt
-                        )
-                        st.download_button(
-                            label=f"📥 Download Intervention PDF Report for #{selected_st_id}",
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                             data=bytes(pdf_data),
                             file_name=f"student_intervention_report_{selected_st_id}.pdf",
                             mime="application/pdf"
@@ -2275,11 +1611,7 @@ def main():
         with ews_tab2:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown('<h4 style="margin:0 0 15px 0;">📤 CSV Batch Prediction</h4>', unsafe_allow_html=True)
-<<<<<<< HEAD
             st.write("Upload a batch CSV file. EduGuard will automatically engineer the multi-paper behavioral features, execute the selected classifier, and output risk stratifications.")
-=======
-            st.write("Upload a batch CSV file containing multiple students with standard features. The system will predict outcomes, categorize risk, and generate a downloadable report.")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             
             batch_file = st.file_uploader("Upload Batch CSV for inference:", type=['csv'], key="batch_prediction_uploader")
             if batch_file is not None:
@@ -2288,11 +1620,7 @@ def main():
                     batch_df_eng = engineer_features(batch_df)
                     X_batch = preprocess_inference_data(batch_df_eng, X_train.columns)
                     
-<<<<<<< HEAD
                     if st.session_state.selected_model_name in scaled_models:
-=======
-                    if st.session_state.selected_model_name == 'Logistic Regression':
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                         batch_probs = model.predict_proba(scaler.transform(X_batch))[:, 0]
                     else:
                         batch_probs = model.predict_proba(X_batch)[:, 0]
@@ -2306,22 +1634,12 @@ def main():
                     
                     col_b1, col_b2, col_b3 = st.columns(3)
                     with col_b1:
-<<<<<<< HEAD
                         st.metric("Total Cohort Records", len(batch_df))
                     with col_b2:
                         st.metric("Critical Risks (≥90%)", (batch_df['Risk_Level']=='Critical').sum())
                     with col_b3:
                         st.metric("High Risks (70-89%)", (batch_df['Risk_Level']=='High').sum())
                         
-=======
-                        st.metric("Total Predicted Rows", len(batch_df))
-                    with col_b2:
-                        st.metric("Critical Risks", (batch_df['Risk_Level']=='Critical').sum())
-                    with col_b3:
-                        st.metric("High Risks", (batch_df['Risk_Level']=='High').sum())
-                        
-                    # Display preview
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     st.dataframe(batch_df[['Dropout_Probability', 'Risk_Level'] + list(X_batch.columns[:4])], use_container_width=True)
                     
                     csv_data = batch_df.to_csv(index=False).encode('utf-8')
@@ -2335,20 +1653,12 @@ def main():
                     st.error(f"Error performing batch prediction: {str(e)}")
             st.markdown('</div>', unsafe_allow_html=True)
 
-<<<<<<< HEAD
     # =========================================================================
     # 5. PREDICTOR & XAI ENGINE PAGE
     # =========================================================================
     elif st.session_state.navigation == "🔮 Predictor & XAI Engine":
         st.markdown('<h1 class="main-title">🔮 Real-Time Student Predictor & XAI Suite</h1>', unsafe_allow_html=True)
         st.markdown('<p class="subtitle">Simulate individual student profiles, inspect SHAP & LIME local attributions, and run Counterfactual What-If scenarios (Paper 10).</p>', unsafe_allow_html=True)
-=======
-
-    # 5. PREDICTOR PAGE
-    elif st.session_state.navigation == "🔮 Predictor":
-        st.markdown('<h1 class="main-title">🔮 Real-time Risk Predictor</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Enter individual parameters to calculate risk probabilities, generate SHAP & LIME charts, and compile AI recommendations.</p>', unsafe_allow_html=True)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         
         st.markdown('<div class="glass-card">', unsafe_allow_html=True)
         
@@ -2361,21 +1671,13 @@ def main():
             displaced = st.checkbox("Displaced (Commuting / Relocated)", value=False)
             needs = st.checkbox("Special Educational Needs", value=False)
         with col_in2:
-<<<<<<< HEAD
             st.write("**💰 Socioeconomic & Financial Indicators**")
-=======
-            st.write("**💰 Financial Status**")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             debtor = st.checkbox("Institutional Debtor (Outstanding fees)", value=False)
             tuition = st.checkbox("Tuition Fees Paid Up to Date", value=True)
             scholarship = st.checkbox("Scholarship Holder", value=False)
             unemployment = st.slider("Unemployment rate (%):", 0.0, 20.0, 11.0)
         with col_in3:
-<<<<<<< HEAD
             st.write("**📚 Academic & Engagement Indicators**")
-=======
-            st.write("**📚 Academic Performance**")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             course_code = st.number_input("Course Code:", 9000, 9999, 9238)
             approved1 = st.slider("Approved units (1st sem):", 0, 15, 5)
             enrolled1 = st.slider("Enrolled units (1st sem):", 1, 15, 6)
@@ -2390,7 +1692,6 @@ def main():
         marital_val = marital_mapping[marital]
         
         input_dict = {
-<<<<<<< HEAD
             'Marital_status': marital_val,
             'Application_mode': 1,
             'Application_order': 1,
@@ -2430,53 +1731,11 @@ def main():
         }
         
         # Calculate engineered multi-paper features
-=======
-            'Marital status': marital_val,
-            'Application mode': 1,
-            'Application order': 1,
-            'Course': course_code,
-            'Daytime/evening attendance': 1,
-            'Previous qualification': 1,
-            'Previous qualification (grade)': 120.0,
-            'Nacionality': 1,
-            'Mother\'s qualification': 10,
-            'Father\'s qualification': 10,
-            'Mother\'s occupation': 5,
-            'Father\'s occupation': 5,
-            'Admission grade': 120.0,
-            'Displaced': 1 if displaced else 0,
-            'Educational special needs': 1 if needs else 0,
-            'Debtor': 1 if debtor else 0,
-            'Tuition fees up to date': 1 if tuition else 0,
-            'Gender': gender_val,
-            'Scholarship holder': 1 if scholarship else 0,
-            'Age at enrollment': age,
-            'International': 0,
-            'Curricular units 1st sem (credited)': 0,
-            'Curricular units 1st sem (enrolled)': enrolled1,
-            'Curricular units 1st sem (evaluations)': approved1 + 2,
-            'Curricular units 1st sem (approved)': approved1,
-            'Curricular units 1st sem (grade)': grade1,
-            'Curricular units 1st sem (without evaluations)': 0,
-            'Curricular units 2nd sem (credited)': 0,
-            'Curricular units 2nd sem (enrolled)': enrolled2,
-            'Curricular units 2nd sem (evaluations)': approved2 + 2,
-            'Curricular units 2nd sem (approved)': approved2,
-            'Curricular units 2nd sem (grade)': grade2,
-            'Curricular units 2nd sem (without evaluations)': 0,
-            'Unemployment rate': unemployment,
-            'Inflation rate': 1.0,
-            'GDP': 0.0
-        }
-        
-        # Calculate features
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         input_dict['Credit_Completion_Rate_1st_Sem'] = approved1 / enrolled1
         input_dict['Credit_Completion_Rate_2nd_Sem'] = approved2 / enrolled2
         input_dict['Grade_Drop'] = grade1 - grade2
         input_dict['Engagement_Score'] = ((approved1 / enrolled1) + (approved2 / enrolled2)) / 2.0
         input_dict['Academic_Stress_Index'] = float((enrolled1 + enrolled2) - (approved1 + approved2))
-<<<<<<< HEAD
         input_dict['Financial_Risk'] = float(debtor + (1.0 - (1 if tuition else 0)) + (1.0 - (1 if scholarship else 0)))
         input_dict['Activity_Span'] = ((approved1 + approved2 + 4) / (approved1 + approved2 + 5)).clip(0, 1)
         input_dict['Pre_Enrollment_Risk'] = 0.35
@@ -2493,16 +1752,6 @@ def main():
             input_df = input_df[X_train.columns]
             
             if st.session_state.selected_model_name in scaled_models:
-=======
-        input_dict['Financial_Risk'] = float(debtor + (1.0 - tuition) + (1.0 - scholarship))
-        
-        if st.button("🔮 Predict Student Outcome", type="primary"):
-            st.markdown("---")
-            input_df = pd.DataFrame([input_dict])
-            input_df = input_df[X_train.columns]
-            
-            if st.session_state.selected_model_name == 'Logistic Regression':
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 input_scaled = scaler.transform(input_df)
                 probs = model.predict_proba(input_scaled)[0]
             else:
@@ -2518,11 +1767,7 @@ def main():
                     mode = "gauge+number",
                     value = pred_prob_dropout * 100,
                     domain = {'x': [0, 1], 'y': [0, 1]},
-<<<<<<< HEAD
                     title = {'text': "Dropout Hazard Probability (%)", 'font': {'color': '#ffffff'}},
-=======
-                    title = {'text': "Dropout Risk Probability (%)", 'font': {'color': '#ffffff'}},
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     gauge = {
                         'axis': {'range': [None, 100], 'tickcolor': "#ffffff"},
                         'bar': {'color': "#764ba2"},
@@ -2539,7 +1784,6 @@ def main():
                         }
                     }
                 ))
-<<<<<<< HEAD
                 fig_gauge.update_layout(paper_bgcolor='rgba(0,0,0,0)', font={'color': "#ffffff"}, height=250)
                 st.plotly_chart(fig_gauge, use_container_width=True)
                 
@@ -2557,33 +1801,12 @@ def main():
                 "🧬 Local SHAP Attributions",
                 "🔄 Counterfactual 'What-If' Simulation (Paper 10)"
             ])
-=======
-                fig_gauge.update_layout(paper_bgcolor='rgba(0,0,0,0)', font={'color': "#ffffff"}, height=260)
-                st.plotly_chart(fig_gauge, use_container_width=True)
-                
-            with col_text:
-                st.markdown(f"### Classification Rating: **{risk_level.upper()} RISK**")
-                st.write(f"The model predicted the student outcome is most likely **{REVERSE_TARGET_MAPPING[pred_class].upper()}**.")
-                st.write(f"**Confidence Probabilities:**")
-                st.markdown(f"- Dropout Probability: `{probs[0]:.2%}`")
-                st.markdown(f"- Graduate Success Probability: `{probs[1]:.2%}`")
-                st.markdown(f"- Enrolled Probability: `{probs[2]:.2%}`")
-                
-            # Explainability Section
-            st.markdown("### 🔍 Why did the model make this prediction?")
-            
-            exp_tab1, exp_tab2 = st.tabs(["📊 LIME Decision Explanations", "🧬 SHAP Local Attribution"])
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             
             with exp_tab1:
                 with st.spinner("🔄 Compiling LIME decision rules..."):
                     try:
                         lime_explainer = get_lime_explainer(X_train)
-<<<<<<< HEAD
                         exp_lime = explain_with_lime(lime_explainer, model, input_df, scaler, st.session_state.selected_model_name, scaled_models)
-=======
-                        exp_lime = explain_with_lime(lime_explainer, model, input_df, scaler, st.session_state.selected_model_name)
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                         exp_list = exp_lime.as_list(label=0)
                         
                         df_lime = pd.DataFrame(exp_list, columns=['Rule', 'Weight'])
@@ -2607,34 +1830,18 @@ def main():
                             font_color='#ffffff',
                             yaxis={'categoryorder': 'total ascending'},
                             margin=dict(t=40, b=10, l=10, r=10),
-<<<<<<< HEAD
                             height=300
                         )
                         st.plotly_chart(fig_lime, use_container_width=True)
                     except Exception as e:
                         st.warning(f"LIME calculation: {e}")
-=======
-                            height=320
-                        )
-                        st.plotly_chart(fig_lime, use_container_width=True)
-                        
-                        # Native LIME HTML inside expander
-                        with st.expander("View Native LIME HTML Interface"):
-                            st.components.v1.html(exp_lime.as_html(), height=400, scrolling=True)
-                    except Exception as e:
-                        st.error(f"Failed LIME explanation: {e}")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                         
             with exp_tab2:
                 with st.spinner("🔄 Running local SHAP Explainer..."):
                     try:
                         shap_explainer = get_shap_explainer(model, X_train, st.session_state.selected_model_name, scaler)
                         if shap_explainer is not None:
-<<<<<<< HEAD
                             if st.session_state.selected_model_name in scaled_models:
-=======
-                            if st.session_state.selected_model_name == 'Logistic Regression':
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                                 s_val = shap_explainer.shap_values(scaler.transform(input_df))
                             else:
                                 s_val = shap_explainer.shap_values(input_df)
@@ -2667,7 +1874,6 @@ def main():
                                 font_color='#ffffff',
                                 yaxis={'categoryorder': 'total ascending'},
                                 margin=dict(t=40, b=10, l=10, r=10),
-<<<<<<< HEAD
                                 height=300
                             )
                             st.plotly_chart(fig_shap_local, use_container_width=True)
@@ -2721,31 +1927,11 @@ def main():
                 text_shap_dict = {}
                 for idx, feat in enumerate(X_train.columns):
                     val = input_dict.get(feat, 0.0)
-=======
-                                height=320
-                            )
-                            st.plotly_chart(fig_shap_local, use_container_width=True)
-                        else:
-                            st.warning("SHAP calculation not supported for current model config.")
-                    except Exception as e:
-                        st.error(f"Failed SHAP local calculations: {e}")
-                        
-            # Text Insight & Recommendations
-            st.markdown("### 💡 Natural Language & Recommendations")
-            # Build simple shap dict for text mapping
-            text_shap_dict = {}
-            if 'df_shap' in locals():
-                text_shap_dict = dict(zip(df_shap['Feature'], df_shap['Contribution']))
-            else:
-                for idx, feat in enumerate(X_train.columns):
-                    val = input_dict[feat]
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                     mean_val = X_train[feat].median()
                     direction = 1 if val < mean_val else -1
                     if 'Tuition' in feat or 'Debtor' in feat:
                         direction = -direction
                     text_shap_dict[feat] = direction
-<<<<<<< HEAD
                 st.write(generate_natural_language_explanation(input_dict, text_shap_dict))
             with c_res2:
                 st.markdown("#### **Multi-Disciplinary Action Steps**")
@@ -2929,56 +2115,18 @@ def main():
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.write("Generate a comprehensive PDF dossier containing student profile indicators, multi-model dropout probabilities, local XAI rules, and ADPoCS counseling plans.")
             
-=======
-                    
-            why_txt = generate_natural_language_explanation(input_dict, text_shap_dict)
-            recs = get_actionable_recommendations(input_dict, pred_prob_dropout)
-            
-            c_res1, c_res2 = st.columns(2)
-            with c_res1:
-                st.markdown("#### **AI Risk Reason Matrix**")
-                st.write(why_txt)
-            with c_res2:
-                st.markdown("#### **Intervention Steps**")
-                for r in recs:
-                    st.write(r)
-                    
-        st.markdown('</div>', unsafe_allow_html=True)
-
-
-    # 6. REPORTS PAGE
-    elif st.session_state.navigation == "📈 Reports":
-        st.markdown('<h1 class="main-title">📈 Academic Reports & Dossier Exports</h1>', unsafe_allow_html=True)
-        st.markdown('<p class="subtitle">Print intervention dossier summaries, download risk sheets, and access research outline copies.</p>', unsafe_allow_html=True)
-        
-        rep_tab1, rep_tab2 = st.tabs(["📝 Printable Student Briefs", "🔬 Patents & Research Papers"])
-        
-        with rep_tab1:
-            st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-            st.write("Construct a customized PDF report containing student attributes, predicted dropout ratios, local XAI rules, and priority advising recommendations.")
-            
-            # Select student from test set
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             st_indices = list(range(len(X_test)))
             st_idx = st.selectbox("Select Student Profile Index:", st_indices, format_func=lambda x: f"Student #{x+1000} (Test Sample)")
             
             st_row = X_test.iloc[st_idx]
             
-<<<<<<< HEAD
             if st.session_state.selected_model_name in scaled_models:
-=======
-            if st.session_state.selected_model_name == 'Logistic Regression':
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 prob = model.predict_proba(scaler.transform(st_row.values.reshape(1,-1)))[0, 0]
             else:
                 prob = model.predict_proba(st_row.values.reshape(1,-1))[0, 0]
                 
             risk_lvl = 'Critical' if prob >= 0.90 else ('High' if prob >= 0.70 else ('Medium' if prob >= 0.40 else 'Low'))
             
-<<<<<<< HEAD
-=======
-            # Map approximate SHAP
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
             rep_shap_dict = {}
             for idx, feat in enumerate(X_test.columns):
                 val = st_row[feat]
@@ -2989,43 +2137,25 @@ def main():
                 rep_shap_dict[feat] = direction
                 
             why_txt = generate_natural_language_explanation(st_row, rep_shap_dict)
-<<<<<<< HEAD
             adpocs_plan = get_adpocs_counseling_plan(st_row, prob)
             
             if st.button("Compile & Download PDF Brief", type="primary"):
-=======
-            recs = get_actionable_recommendations(st_row, prob)
-            
-            if st.button("Generate Printable PDF Brief"):
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 try:
                     pdf_bytes = generate_student_pdf_report(
                         st_idx + 1000,
                         st_row,
                         prob,
                         risk_lvl,
-<<<<<<< HEAD
                         adpocs_plan,
                         why_txt
                     )
                     st.download_button(
                         label=f"📥 Download Official PDF Dossier for Student #{st_idx+1000}",
-=======
-                        recs,
-                        why_txt
-                    )
-                    st.download_button(
-                        label=f"📥 Download PDF Report for Student #{st_idx+1000}",
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                         data=bytes(pdf_bytes),
                         file_name=f"student_intervention_dossier_{st_idx+1000}.pdf",
                         mime="application/pdf"
                     )
-<<<<<<< HEAD
                     st.success("PDF Dossier successfully compiled!")
-=======
-                    st.success("PDF Dossier compiled!")
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
                 except Exception as e:
                     st.error(f"Error compiling PDF Brief: {e}")
             st.markdown('</div>', unsafe_allow_html=True)
@@ -3034,7 +2164,6 @@ def main():
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown("### 🔬 Draft Patent Abstract")
             st.code("""
-<<<<<<< HEAD
 TITLE: SYSTEM AND COMPUTER-IMPLEMENTED METHOD FOR STRATIFIED REAL-TIME STUDENT DROPOUT PREDICTION AND MULTI-TIERED INTERVENTION DOSSIER GENERATION USING EXPLAINABLE ARTIFICIAL INTELLIGENCE
 
 ABSTRACT:
@@ -3111,51 +2240,6 @@ VII. CONCLUSION, ETHICAL GOVERNANCE & FUTURE WORK
 def explain_with_lime(explainer, model, instance_df, scaler, selected_model_name, scaled_models):
     """Local LIME explanation mapping wrapper"""
     if selected_model_name in scaled_models:
-=======
-TITLE: SYSTEM AND METHOD FOR REAL-TIME STUDENT DROPOUT PREDICTION AND TRIAGED EARLY WARNING SYSTEM USING EXPLAINABLE ARTIFICIAL INTELLIGENCE
-            
-ABSTRACT:
-A system and computer-implemented method are provided to predict student dropout risk and automate targeted interventions in educational environments. The system ingests student demographics, socioeconomic factors, and academic performance metrics. A pipeline engineers composite features including a first and second semester Credit Completion Rate, a Grade Drop index, and a multidimensional Academic Stress Index. A Machine Learning comparison model handles class imbalances using Synthetic Minority Over-sampling Technique (SMOTE) to classify students into stratified risk levels (Low, Medium, High, and Critical). An Explainable AI (XAI) engine utilizes SHAP and LIME values to generate localized explanations in real-time, which are fed into a natural language compiler to construct plain-English risk driver descriptions. These descriptions automatically map features to a triaged, personalized student intervention recommendation dossier, facilitating proactive educator mediation.
-            """, language="markdown")
-            
-            st.markdown("### 📝 Proposed IEEE Paper Outline")
-            st.code("""
-I. INTRODUCTION
-   A. The Dropout Challenge in Higher Education
-   B. Limitations of Post-Hoc Institutional Retention Reports
-   C. Contributions: Proactive Early Warning System (EWS) using XAI
-
-II. METHODOLOGY & SYSTEM ARCHITECTURE
-   A. Dataset Description (UCI Student Dropout Dataset)
-   B. Feature Engineering (Academic Stress Index, Grade Drop Dynamics)
-   C. Synthetic Minority Over-sampling Technique (SMOTE) Implementation
-   D. Classifier Architectures (Random Forest, XGBoost, LightGBM, Logistic Regression)
-
-III. EXPLAINABLE ARTIFICIAL INTELLIGENCE (XAI)
-   A. Local vs. Global Model Interpretability
-   B. SHAP (Shapley Additive exPlanations) Implementation
-   C. LIME (Local Interpretable Model-agnostic Explanations) Implementation
-   D. Natural Language Risk Compilation Algorithm
-
-IV. EXPERIMENTAL RESULTS
-   A. Performance Evaluation and Algorithm Comparison
-   B. Class Imbalance Mitigation Assessment
-   C. Interpretation of Global and Local Feature Contributions
-
-V. DISCUSSION & IMPLICATIONS FOR HIGHER EDUCATION POLICY
-   A. Deploying EWS in Institutional Contexts
-   B. Mapping AI Explanations to Targeted Financial & Academic Support
-   C. Limitations and Future Work
-
-VI. CONCLUSION & REFERENCES
-            """, language="markdown")
-            st.markdown('</div>', unsafe_allow_html=True)
-
-
-def explain_with_lime(explainer, model, instance_df, scaler, selected_model_name):
-    """Local LIME explanation mapping wrapper"""
-    if selected_model_name == 'Logistic Regression':
->>>>>>> 990e08ca4dd488a580c14221d8affe49fa487d86
         predict_fn = lambda x: model.predict_proba(scaler.transform(x))
     else:
         predict_fn = model.predict_proba
